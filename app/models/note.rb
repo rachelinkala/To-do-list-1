@@ -1,3 +1,3 @@
 class Note < ApplicationRecord
-  validated_uniqueness_of :title
+  validates_uniqueness_of :title
 end
