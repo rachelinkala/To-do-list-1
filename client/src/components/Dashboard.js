@@ -30,9 +30,10 @@ class Dashboard extends React.Component {
   }
 
   submit = (note) => {
-    const { notes } = this.state
+    let { notes } = this.state
     axios.post('/api/notes', { note } )
       .then( res => this.setState({ notes: [res.data, ...notes ], showForm: false }) )
+      .catch( e => console.log(e.response.data.errors))
   }
 
   toggleForm = () => {

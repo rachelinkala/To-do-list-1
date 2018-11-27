@@ -15,7 +15,7 @@ class Api::NotesController < ApplicationController
     if note.save
       render json: note
     else
-      render json: note.errors, status 422
+      render json: { errors: product.errors.full_messages.join(',') }, status: :unprocessable_entity
     end
   end
 
