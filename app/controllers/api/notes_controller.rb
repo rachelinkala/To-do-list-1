@@ -39,5 +39,5 @@ class Api::NotesController < ApplicationController
     def note_params
       params.require(:note).permit(:title, :description)
     end
-  end
+
 end
